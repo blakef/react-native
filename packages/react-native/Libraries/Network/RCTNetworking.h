@@ -8,6 +8,7 @@
 #import <React/RCTEventEmitter.h>
 #import <React/RCTNetworkTask.h>
 #import <React/RCTURLRequestHandler.h>
+#import "NSURLSessionConfiguration+RCTNetworkIntercept.h"
 
 @protocol RCTNetworkingRequestHandler <NSObject>
 

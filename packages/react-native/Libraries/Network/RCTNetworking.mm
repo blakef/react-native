@@ -711,6 +711,7 @@ RCT_EXPORT_METHOD(sendRequest
     @"withCredentials" : @(query.withCredentials()),
   };
 
+  NSLog(@"JS: BuildRequest-> %@", [NSURLSessionConfiguration defaultSessionConfiguration].protocolClasses);
   // TODO: buildRequest returns a cancellation block, but there's currently
   // no way to invoke it, if, for example the request is cancelled while
   // loading a large file to build the request body
