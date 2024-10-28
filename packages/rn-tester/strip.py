@@ -16,16 +16,19 @@ def parse_protocol(node, depth):
   l(depth, f'🔬 [PROTOCOL][{node.spelling}] ({node.kind})');
   for child in node.get_children():
     l(depth+1, f'<{child.kind}> ')
-    dump(child, depth+1)
+    # dump(child, depth+1)
 
 def parse_interface(node, depth):
   """
   Show protocol descriptions
   """
   l(depth, f'🔬 [PROTOCOL][{node.spelling}] ({node.kind})');
-  for child in node.get_children():
-    l(depth+1, f'<{child.kind}> → {child.spelling}')
-    dump(child, depth+1)
+  l(depth, f'@interface {node.displayname} -> {len(list(node.get_arguments()))}')
+  dump(node.type, depth+1)
+  # ! get_arguments, get_tokens
+  #for child in node.get_tokens():
+  #  l(depth+1, f'<{child.kind}> → {child.spelling}')
+    # dump(child, depth+1)
 
 def dump(node, depth):
   """Dump debugging information about a node"""
